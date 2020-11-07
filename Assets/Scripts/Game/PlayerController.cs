@@ -17,7 +17,6 @@ namespace SpaceShooter
 		[SerializeField] GameObject boltPrefab = null;
 		[SerializeField] Transform shotSpawn = null;
 		[SerializeField] GameObject explosionPrefab = null;
-		[SerializeField] int maxLifes = 3;
 		[SerializeField] Transform boltsContainer = null;
 
 		PlayerData playerData;
@@ -40,13 +39,13 @@ namespace SpaceShooter
 
 			SimplePool.Preload(boltPrefab, boltsContainer, 10);
 
-			lifes = maxLifes;
+			lifes = gameConfig.ShipLifes;
 			initialPosition = transform.position;
 		}
 
 		public void ResetAll()
 		{
-			lifes = maxLifes;
+			lifes = gameConfig.ShipLifes;
 			rb.velocity = Vector3.zero;
 			transform.position = initialPosition;
 			myTime = 0.0F;
