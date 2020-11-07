@@ -664,6 +664,10 @@
       <Project>{31EA003C-1CF9-D946-A919-8AC5ED6BE76A}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{501C2D58-A8DD-C0B9-7E15-9BF327E3F3E6}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

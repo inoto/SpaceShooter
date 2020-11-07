@@ -6,16 +6,18 @@ namespace SpaceShooter
 {
 	public class UIGlobalMap : MonoBehaviour
 	{
-		[SerializeField] GameConfig gameConfig = null;
 		[SerializeField] Button[] buttons = null;
 
 		[Header("Colors")]
 		[SerializeField] Color doneLevelColor = Color.white;
 
 		PlayerData playerData;
+		GameConfig gameConfig;
 
 		void Awake()
 		{
+			gameConfig = GameController.Instance.GameConfig;
+
 			if (gameConfig.Levels.Length != buttons.Length)
 				throw new Exception("Number of levels in config NOT equal number of buttons on a Global map");
 

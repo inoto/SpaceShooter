@@ -7,7 +7,6 @@ namespace SpaceShooter
 {
 	public class Spawner : MonoBehaviour
 	{
-		[SerializeField] GameConfig gameConfig = null;
 		[SerializeField] Vector3 spawnValues = Vector3.zero;
 		[SerializeField] int asteroidCount = 10;
 		[SerializeField] float startWait = 0.75f;
@@ -16,11 +15,13 @@ namespace SpaceShooter
 		[SerializeField] Transform asteroidsContainer = null;
 
 		PlayerData playerData;
+		GameConfig gameConfig;
 		LevelData currentLevelData;
 
 		public void Init()
 		{
 			playerData = GameController.Instance.PlayerData;
+			gameConfig = GameController.Instance.GameConfig;
 			currentLevelData = playerData.LevelData[playerData.ProgressLevelIndex];
 
 			for (int i = 0; i < gameConfig.Asteroids.Length; i++)

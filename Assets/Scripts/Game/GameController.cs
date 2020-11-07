@@ -25,6 +25,7 @@ namespace SpaceShooter
 		[SerializeField] bool deleteSaveOnStart = false;
 
 		public PlayerData PlayerData = null;
+		public GameConfig GameConfig => gameConfig;
 
 		PlayerController player;
 		Spawner spawner;

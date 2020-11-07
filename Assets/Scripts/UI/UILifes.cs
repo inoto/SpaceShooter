@@ -6,7 +6,6 @@ namespace SpaceShooter
 {
 	public class UILifes : MonoBehaviour
 	{
-		[SerializeField] GameConfig gameConfig = null;
 		[SerializeField] GameObject lifeTemplate = null;
 
 		[Header("Image")]
@@ -16,11 +15,14 @@ namespace SpaceShooter
 		[SerializeField] Color inactiveColor = Color.gray;
 
 		PlayerController player;
+		GameConfig gameConfig;
 		List<Image> lifes;
 		int currentIndex = 0;
 
 		void Awake()
 		{
+			gameConfig = GameController.Instance.GameConfig;
+
 			lifes = new List<Image>(gameConfig.ShipLifes);
 			lifeTemplate.SetActive(false);
 			for (int i = 0; i < gameConfig.ShipLifes; i++)
@@ -47,7 +49,7 @@ namespace SpaceShooter
 			GameController.Instance.QuitLevelEvent -= Hide;
 		}
 
-		void OnLifeLost(int lifesLeft)
+		public void OnLifeLost(int lifesLeft)
 		{
 			lifes[currentIndex].sprite = inactiveSprite;
 			lifes[currentIndex].color = inactiveColor;

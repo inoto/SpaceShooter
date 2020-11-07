@@ -10,7 +10,6 @@ namespace SpaceShooter
 		public event Action<int> LifeLostEvent;
 		public event Action EnoughKillsEvent;
 
-		[SerializeField] GameConfig gameConfig = null;
 		[SerializeField] float fireRate = 0.5F;
 		[SerializeField] float speed = 10f;
 		[SerializeField] float tilt = 5f;
@@ -22,6 +21,7 @@ namespace SpaceShooter
 		[SerializeField] Transform boltsContainer = null;
 
 		PlayerData playerData;
+		GameConfig gameConfig;
 		float myTime = 0.0F;
 		float nextFire = 0.5F;
 		Rigidbody rb;
@@ -33,6 +33,7 @@ namespace SpaceShooter
 		public void Init()
 		{
 			playerData = GameController.Instance.PlayerData;
+			gameConfig = GameController.Instance.GameConfig;
 
 			rb = GetComponent<Rigidbody>();
 			audioSource = GetComponent<AudioSource>();
