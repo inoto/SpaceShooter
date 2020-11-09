@@ -80,8 +80,10 @@ namespace SpaceShooter
 		public void QuitLevel()
 		{
 			if (PlayerData.ProgressLevelIndex <= currentlevelIndex
-				&& PlayerData.ProgressLevelIndex < PlayerData.LevelData.Length - 1)
+			    && PlayerData.ProgressLevelIndex < PlayerData.LevelData.Length - 1)
 				PlayerData.ProgressLevelIndex += 1;
+			else
+				PlayerData.ProgressCompleted = true;
 			player.ResetAll();
 			spawner.Stop();
 			QuitLevelEvent?.Invoke();

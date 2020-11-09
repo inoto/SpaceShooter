@@ -22,7 +22,7 @@ namespace SpaceShooter
 		{
 			playerData = GameController.Instance.PlayerData;
 			gameConfig = GameController.Instance.GameConfig;
-			currentLevelData = playerData.LevelData[playerData.ProgressLevelIndex];
+			
 
 			for (int i = 0; i < gameConfig.Asteroids.Length; i++)
 			{
@@ -33,6 +33,8 @@ namespace SpaceShooter
 
 		public void Run()
 		{
+			currentLevelData = playerData.LevelData[playerData.ProgressLevelIndex];
+
 			var activeAsteroids = FindObjectsOfType<Asteroid>();
 			for (int i = 0; i < activeAsteroids.Length; i++)
 				SimplePool.Despawn(activeAsteroids[i].gameObject);

@@ -55,7 +55,8 @@ namespace SpaceShooter
 					continue;
 
 				buttons[i].interactable = true;
-				if (i < playerData.ProgressLevelIndex)
+				if (i < playerData.ProgressLevelIndex
+				    || (i == playerData.ProgressLevelIndex && playerData.ProgressCompleted))
 				{
 					buttons[i].GetComponent<Image>().color = doneLevelColor;
 				}

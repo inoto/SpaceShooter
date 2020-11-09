@@ -10581,7 +10581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f81d516b41bd4d43a4b334662b54ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConfig: {fileID: 11400000, guid: 58d54c8b05931694f87f70e3a28af0f7, type: 2}
   buttons:
   - {fileID: 1297342029}
   - {fileID: 129504579}
@@ -10630,7 +10629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c0710a7b306b428a5b265580ca7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConfig: {fileID: 11400000, guid: 58d54c8b05931694f87f70e3a28af0f7, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
   asteroidCount: 10
   startWait: 0.75
@@ -11311,7 +11309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03a20901cd1ea347b9874c70030fed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConfig: {fileID: 11400000, guid: 58d54c8b05931694f87f70e3a28af0f7, type: 2}
   lifeTemplate: {fileID: 1356095904}
   activeSprite: {fileID: 21300000, guid: 0e94fd2cc7edddd4a9bde0067a675ace, type: 3}
   activeColor: {r: 1, g: 0, b: 0, a: 1}
@@ -13004,9 +13001,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConfig: {fileID: 11400000, guid: 58d54c8b05931694f87f70e3a28af0f7, type: 2}
   level: {fileID: 2141511444}
-  deleteSaveOnStart: 0
+  deleteSaveOnStart: 1
   PlayerData:
     ProgressLevelIndex: 0
+    ProgressCompleted: 0
     LevelData: []
 --- !u!4 &1904691132
 Transform:
